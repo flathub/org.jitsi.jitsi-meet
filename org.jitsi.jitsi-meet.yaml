@@ -31,11 +31,12 @@ modules:
       - rm jitsi-meet-x86_64.AppImage
 
       - cp squashfs-root/jitsi-meet.desktop org.jitsi.jitsi-meet.desktop
-      - desktop-file-edit --set-icon org.jitsi.jitsi-meet --set-key Exec --set-value jitsi-meet-run org.jitsi.jitsi-meet.desktop
+      - desktop-file-edit --set-icon org.jitsi.jitsi-meet --set-key Exec --set-value 'jitsi-meet-run %u' org.jitsi.jitsi-meet.desktop
       - cp squashfs-root/jitsi-meet.png org.jitsi.jitsi-meet.png
 
       - install -D jitsi-meet-run -t /app/bin
       - install -Dm644 org.jitsi.jitsi-meet.metainfo.xml -t /app/share/metainfo
+      - install -Dm644 org.jitsi.jitsi-meet.jitsi-meet.xml -t /app/share/mime/packages
       - install -Dm644 org.jitsi.jitsi-meet.desktop -t /app/share/applications
       - install -Dm644 org.jitsi.jitsi-meet.png -t /app/share/icons/hicolor/512x512/apps
 
@@ -47,6 +48,8 @@ modules:
           - zypak-wrapper /app/bin/jitsi-meet/jitsi-meet "$@"
       - type: file
         path: org.jitsi.jitsi-meet.metainfo.xml
+      - type: file
+        path: org.jitsi.jitsi-meet.jitsi-meet.xml
       - type: file
         filename: jitsi-meet-x86_64.AppImage
         url: https://github.com/jitsi/jitsi-meet-electron/releases/download/v2.3.1/jitsi-meet-x86_64.AppImage
