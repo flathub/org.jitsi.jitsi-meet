@@ -30,8 +30,8 @@
         </screenshot>
     </screenshots>
     <releases>
-        <release version="2.4.0" date="2020-09-25"/>
         <release version="2.4.1" date="2020-10-02"/>
+        <release version="2.4.0" date="2020-09-25"/>
     </releases>
     <content_rating type="oars-1.1">
         <content_attribute id="social-chat">moderate</content_attribute>
