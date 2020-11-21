@@ -14,6 +14,11 @@ finish-args:
   - --socket=pulseaudio
   - --socket=x11
   - --talk-name=org.freedesktop.Notifications
+
+    # From Chromium source-code for screen-saver inhibition
+  - --talk-name=org.gnome.SessionManager
+  - --talk-name=org.freedesktop.PowerManagement
+  - --talk-name=org.freedesktop.ScreenSaver
 modules:
   - name: unappimage
     buildsystem: simple
