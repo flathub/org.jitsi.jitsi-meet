@@ -60,3 +60,8 @@ modules:
         url: https://github.com/jitsi/jitsi-meet-electron/releases/download/v2.8.3/jitsi-meet-x86_64.AppImage
         sha256: 290972ba20d0ef57e679cce5fc5137f16586804df88a4cb3a1b6abae3907e430
         size: 91900738
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/jitsi/jitsi-meet-electron/releases/latest
+          version-query: '.tag_name'
+          url-query: '.assets[] | select(.name=="jitsi-meet-x86_64.AppImage") | .browser_download_url'
