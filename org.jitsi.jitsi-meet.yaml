@@ -14,12 +14,14 @@ finish-args:
   - --socket=pulseaudio
   - --socket=x11
   - --socket=wayland
+  - --filesystem=xdg-run/pipewire-0
   - --talk-name=org.freedesktop.Notifications
 
     # From Chromium source-code for screen-saver inhibition
   - --talk-name=org.gnome.SessionManager
   - --talk-name=org.freedesktop.PowerManagement
   - --talk-name=org.freedesktop.ScreenSaver
+
 modules:
   - name: unappimage
     buildsystem: simple
@@ -29,6 +31,22 @@ modules:
       - type: git
         url: https://github.com/refi64/unappimage
         commit: d7f86f2a0d7ec3a69211125207d5f127386b849a
+
+  - name: pipewire
+    buildsystem: meson
+    config-opts:
+      - -Dgstreamer=disabled
+      - -Dman=false
+      - -Dsystemd=false
+    cleanup:
+      - /include
+      - /bin
+      - /etc
+      - /lib/pkgconfig
+    sources:
+      - type: git
+        url: https://github.com/PipeWire/pipewire.git
+        tag: 0.2.7
 
   - name: jitsi-meet
     buildsystem: simple
