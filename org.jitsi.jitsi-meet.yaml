@@ -1,4 +1,3 @@
----
 app-id: org.jitsi.jitsi-meet
 base: org.electronjs.Electron2.BaseApp
 base-version: '20.08'
@@ -55,7 +54,8 @@ modules:
       - rm jitsi-meet-x86_64.AppImage
 
       - cp squashfs-root/jitsi-meet.desktop org.jitsi.jitsi-meet.desktop
-      - desktop-file-edit --set-icon org.jitsi.jitsi-meet --set-key Exec --set-value 'jitsi-meet-run %u' org.jitsi.jitsi-meet.desktop
+      - desktop-file-edit --set-icon org.jitsi.jitsi-meet --set-key Exec --set-value
+        'jitsi-meet-run %u' org.jitsi.jitsi-meet.desktop
       - cp squashfs-root/jitsi-meet.png org.jitsi.jitsi-meet.png
 
       - install -D jitsi-meet-run -t /app/bin
@@ -76,10 +76,10 @@ modules:
         path: org.jitsi.jitsi-meet.jitsi-meet.xml
       - type: file
         filename: jitsi-meet-x86_64.AppImage
-        url: https://github.com/jitsi/jitsi-meet-electron/releases/download/v2.8.4/jitsi-meet-x86_64.AppImage
-        sha256: 39679ca53ec7d08f79d7a9ae6fa1c73f45366a7ead639b28803968bda46a2349
+        url: https://github.com/jitsi/jitsi-meet-electron/releases/download/v2.8.5/jitsi-meet-x86_64.AppImage
+        sha256: 8611943fada1603c4527e84736c4bdf73c2f2ae319ee31ce0b148d2ef1907264
         x-checker-data:
           type: json
           url: https://api.github.com/repos/jitsi/jitsi-meet-electron/releases/latest
-          version-query: '.tag_name | sub("^v"; "")'
-          url-query: '.assets[] | select(.name=="jitsi-meet-x86_64.AppImage") | .browser_download_url'
+          version-query: .tag_name | sub("^v"; "")
+          url-query: .assets[] | select(.name=="jitsi-meet-x86_64.AppImage") | .browser_download_url
