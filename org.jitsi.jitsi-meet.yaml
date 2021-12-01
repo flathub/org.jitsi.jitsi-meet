@@ -16,9 +16,6 @@ finish-args:
   - --filesystem=xdg-run/pipewire-0
   - --talk-name=org.freedesktop.Notifications
 
-    # Until Electron 14 with the desktop-portal support
-  - --filesystem=home:ro
-
     # From Chromium source-code for screen-saver inhibition
   - --talk-name=org.gnome.SessionManager
   - --talk-name=org.freedesktop.PowerManagement
