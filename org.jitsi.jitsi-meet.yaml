@@ -24,18 +24,20 @@ finish-args:
   - --talk-name=org.freedesktop.login1
 
 modules:
-  - name: unappimage
-    buildsystem: simple
-    build-commands:
-      - make -C squashfs-tools -j ${FLATPAK_BUILDER_N_JOBS} install INSTALL_DIR=/app/bin
-    sources:
-      - type: git
-        url: https://github.com/refi64/unappimage
-        commit: d7f86f2a0d7ec3a69211125207d5f127386b849a
-
+#   - name: unappimage
+#     buildsystem: simple
+#     build-commands:
+#       - make -C squashfs-tools -j ${FLATPAK_BUILDER_N_JOBS} install INSTALL_DIR=/app/bin
+#     sources:
+#       - type: git
+#         url: https://github.com/refi64/unappimage
+#         commit: d7f86f2a0d7ec3a69211125207d5f127386b849a
+# Removed, since launching the appimage with the --appimage-extract option works just fine, and also probably helps to decrease server load -Oro
   - name: jitsi-meet
     buildsystem: simple
     build-commands:
+      - chmod+x jitsi-meet-x86_64.AppImage
+      - ./jitsi-meet-x86_64.AppImage --appimage-extract
       - unappimage jitsi-meet-x86_64.AppImage
       - rm jitsi-meet-x86_64.AppImage
 
