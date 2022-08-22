@@ -36,7 +36,7 @@ modules:
   - name: jitsi-meet
     buildsystem: simple
     build-commands:
-      - chmod+x jitsi-meet-x86_64.AppImage
+      - chmod +x jitsi-meet-x86_64.AppImage
       - ./jitsi-meet-x86_64.AppImage --appimage-extract
       - unappimage jitsi-meet-x86_64.AppImage
       - rm jitsi-meet-x86_64.AppImage
