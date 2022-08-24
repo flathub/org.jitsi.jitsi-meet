@@ -24,19 +24,11 @@ finish-args:
   - --talk-name=org.freedesktop.login1
 
 modules:
-  - name: unappimage
-    buildsystem: simple
-    build-commands:
-      - make -C squashfs-tools -j ${FLATPAK_BUILDER_N_JOBS} install INSTALL_DIR=/app/bin
-    sources:
-      - type: git
-        url: https://github.com/refi64/unappimage
-        commit: d7f86f2a0d7ec3a69211125207d5f127386b849a
-
   - name: jitsi-meet
     buildsystem: simple
     build-commands:
-      - unappimage jitsi-meet-x86_64.AppImage
+      - chmod +x jitsi-meet-x86_64.AppImage
+      - ./jitsi-meet-x86_64.AppImage --appimage-extract
       - rm jitsi-meet-x86_64.AppImage
 
       - cp squashfs-root/jitsi-meet.desktop org.jitsi.jitsi-meet.desktop
