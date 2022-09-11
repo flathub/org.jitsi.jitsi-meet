@@ -23,6 +23,9 @@ finish-args:
     # Also used for inhibit
   - --talk-name=org.freedesktop.login1
 
+    # Add option to enable Wayland backend
+  - --env=JITSI_USE_WAYLAND=0
+
 modules:
   - name: jitsi-meet
     buildsystem: simple
@@ -44,10 +47,8 @@ modules:
 
       - mv squashfs-root /app/bin/jitsi-meet
     sources:
-      - type: script
-        dest-filename: jitsi-meet-run
-        commands:
-          - zypak-wrapper /app/bin/jitsi-meet/jitsi-meet "$@"
+      - type: file
+        path: jitsi-meet-run
       - type: file
         path: org.jitsi.jitsi-meet.metainfo.xml
       - type: file

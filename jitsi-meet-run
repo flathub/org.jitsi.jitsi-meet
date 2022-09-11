@@ -1,0 +1,18 @@
+#!/bin/bash
+
+set -euo pipefail
+
+EXTRA_ARGS=()
+
+declare -i JITSI_USE_WAYLAND="${JITSI_USE_WAYLAND:-0}"
+
+# Additional args for enabling Wayland
+if [[ "${JITSI_USE_WAYLAND}" -eq 1 && "${XDG_SESSION_TYPE}" == "wayland" ]]; then
+    echo "JITSI_USE_WAYLAND set, adding --ozone-platform=wayland to launch options"
+    EXTRA_ARGS+=(
+        "--ozone-platform=wayland"
+    )
+fi
+
+export TMPDIR="${XDG_RUNTIME_DIR}/app/${FLATPAK_ID}"
+exec zypak-wrapper /app/bin/jitsi-meet/jitsi-meet "${EXTRA_ARGS[@]}" "$@"
