@@ -13,7 +13,7 @@ Wayland support can be enabled by setting the environment variable `JITSI_USE_WA
 $ flatpak override --user --env=JITSI_USE_WAYLAND=1 org.jitsi.jitsi-meet
 ```
 
-Wayland support can also be temporarily enabled for a single run::
+Wayland support can also be temporarily enabled for a single run:
 
 ```
 $ flatpak run --env=JITSI_USE_WAYLAND=1 org.jitsi.jitsi-meet
