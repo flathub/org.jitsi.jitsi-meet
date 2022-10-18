@@ -55,8 +55,8 @@ modules:
         path: org.jitsi.jitsi-meet.jitsi-meet.xml
       - type: file
         filename: jitsi-meet-x86_64.AppImage
-        url: https://github.com/jitsi/jitsi-meet-electron/releases/download/v2022.9.1/jitsi-meet-x86_64.AppImage
-        sha256: 6c8d94f3e9d9746c41ce0bc4494531e6e54246d0037c8731708f86a5fd264d78
+        url: https://github.com/jitsi/jitsi-meet-electron/releases/download/v2022.8.1/jitsi-meet-x86_64.AppImage
+        sha256: facacf1a6f1882d4dedb7d75063512bbc8c0b72b6864d615d1f902f986c358e3
         x-checker-data:
           type: json
           url: https://api.github.com/repos/jitsi/jitsi-meet-electron/releases/latest
