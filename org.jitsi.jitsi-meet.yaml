@@ -30,9 +30,9 @@ modules:
   - name: jitsi-meet
     buildsystem: simple
     build-commands:
-      - chmod +x jitsi-meet-x86_64.AppImage
-      - ./jitsi-meet-x86_64.AppImage --appimage-extract
-      - rm jitsi-meet-x86_64.AppImage
+      - chmod +x jitsi-meet.AppImage
+      - ./jitsi-meet.AppImage --appimage-extract
+      - rm jitsi-meet.AppImage
 
       - cp squashfs-root/jitsi-meet.desktop org.jitsi.jitsi-meet.desktop
       - desktop-file-edit --set-icon org.jitsi.jitsi-meet --set-key Exec --set-value
@@ -54,11 +54,24 @@ modules:
       - type: file
         path: org.jitsi.jitsi-meet.jitsi-meet.xml
       - type: file
-        filename: jitsi-meet-x86_64.AppImage
-        url: https://github.com/jitsi/jitsi-meet-electron/releases/download/v2023.7.1/jitsi-meet-x86_64.AppImage
-        sha256: f011cc2eb885ab678c12b6e620e48484527d593936edd98f1d37d74d7645183e
+        url: https://github.com/jitsi/jitsi-meet-electron/releases/download/v2023.7.2/jitsi-meet-x86_64.AppImage
+        sha256: bf21251f89e5cd22a584edaacc1dc09507bd5d42835859dea1209a730c1cf3e0
+        only-arches:
+          - x86_64
+        dest-filename: jitsi-meet.AppImage
         x-checker-data:
           type: json
           url: https://api.github.com/repos/jitsi/jitsi-meet-electron/releases/latest
           version-query: .tag_name | sub("^v"; "")
           url-query: .assets[] | select(.name=="jitsi-meet-x86_64.AppImage") | .browser_download_url
+      - type: file
+        url: https://github.com/jitsi/jitsi-meet-electron/releases/download/v2023.7.2/jitsi-meet-arm64.AppImage
+        sha256: d97ae16b634520259a7bd7ac288fe3b9fa62aac52de414f685a0859de459ea9f
+        only-arches:
+          - aarch64
+        dest-filename: jitsi-meet.AppImage
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/jitsi/jitsi-meet-electron/releases/latest
+          version-query: .tag_name | sub("^v"; "")
+          url-query: .assets[] | select(.name=="jitsi-meet-arm64.AppImage") | .browser_download_url
