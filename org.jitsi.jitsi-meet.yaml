@@ -1,8 +1,8 @@
 app-id: org.jitsi.jitsi-meet
 base: org.electronjs.Electron2.BaseApp
-base-version: '22.08'
+base-version: '23.08'
 runtime: org.freedesktop.Platform
-runtime-version: '22.08'
+runtime-version: '23.08'
 sdk: org.freedesktop.Sdk
 command: jitsi-meet-run
 separate-locales: false
@@ -11,7 +11,7 @@ finish-args:
   - --share=ipc
   - --share=network
   - --socket=pulseaudio
-  - --socket=x11
+  - --socket=fallback-x11
   - --socket=wayland
   - --talk-name=org.freedesktop.Notifications
 
@@ -55,8 +55,8 @@ modules:
       - type: file
         path: org.jitsi.jitsi-meet.jitsi-meet.xml
       - type: file
-        url: https://github.com/jitsi/jitsi-meet-electron/releases/download/v2023.9.1/jitsi-meet-x86_64.AppImage
-        sha256: 13f450027cf515551718a98c90368f731c21041f31357ca2590285aa17de0361
+        url: https://github.com/jitsi/jitsi-meet-electron/releases/download/v2023.10.0/jitsi-meet-x86_64.AppImage
+        sha256: ce13b1fe076c89032e382084e6c9fe24dbb4589ac7dfa5dfbeaa8dbc4db84adf
         only-arches:
           - x86_64
         dest-filename: jitsi-meet.AppImage
@@ -66,8 +66,8 @@ modules:
           version-query: .tag_name | sub("^v"; "")
           url-query: .assets[] | select(.name=="jitsi-meet-x86_64.AppImage") | .browser_download_url
       - type: file
-        url: https://github.com/jitsi/jitsi-meet-electron/releases/download/v2023.9.1/jitsi-meet-arm64.AppImage
-        sha256: 2fdbafad92c6fd7d3abbfc7dafdde88e018f31a907530872cffa1fca4888ae2e
+        url: https://github.com/jitsi/jitsi-meet-electron/releases/download/v2023.10.0/jitsi-meet-arm64.AppImage
+        sha256: 5980edc577e874f995e6928096e77c16224431a5dcb7ebf239857a3018a43522
         only-arches:
           - aarch64
         dest-filename: jitsi-meet.AppImage
