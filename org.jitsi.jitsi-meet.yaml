@@ -23,8 +23,7 @@ finish-args:
     # Also used for inhibit
   - --talk-name=org.freedesktop.login1
 
-    # Add option to enable Wayland backend
-  - --env=JITSI_USE_WAYLAND=0
+    # Fixes cursor theming under Wayland
   - --env=XCURSOR_PATH=/run/host/user-share/icons:/run/host/share/icons:~/.icons
 
 modules:
