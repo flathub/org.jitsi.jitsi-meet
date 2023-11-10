@@ -25,6 +25,7 @@ finish-args:
 
     # Fixes cursor theming under Wayland
   - --env=XCURSOR_PATH=/run/host/user-share/icons:/run/host/share/icons:~/.icons
+  - --env=JITSI_CLEAN_CACHE=1
 
 modules:
   - name: jitsi-meet

@@ -21,5 +21,18 @@ if [[ -e "${XDG_RUNTIME_DIR}/${WAYLAND_DISPLAY:-"wayland-0"}" ]]; then
     fi
 fi
 
+# Borrowed from: https://github.com/flathub/md.obsidian.Obsidian/blob/5312e50f13f48efccd60a90f282b92b38bcec9a1/obsidian.sh#L36
+if [[ "${JITSI_CLEAN_CACHE:-0}" -eq 1 ]]; then
+    CACHE_DIRECTORIES=(
+        "${XDG_CONFIG_HOME}/Jitsi Meet/GPUCache"
+    )
+    for CACHE_DIRECTORY in "${CACHE_DIRECTORIES[@]}"; do
+        if [[ -d "${CACHE_DIRECTORY}" ]]; then
+            echo "Deleting cache directory: ${CACHE_DIRECTORY}"
+            rm -rf "${CACHE_DIRECTORY}"
+        fi
+    done
+fi
+
 export TMPDIR="${XDG_RUNTIME_DIR}/app/${FLATPAK_ID}"
 exec zypak-wrapper /app/bin/jitsi-meet/jitsi-meet "${EXTRA_ARGS[@]}" "$@"
