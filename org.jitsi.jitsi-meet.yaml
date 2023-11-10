@@ -25,6 +25,7 @@ finish-args:
 
     # Add option to enable Wayland backend
   - --env=JITSI_USE_WAYLAND=0
+  - --env=JITSI_CLEAN_CACHE=1
   - --env=XCURSOR_PATH=/run/host/user-share/icons:/run/host/share/icons:~/.icons
 
 modules:
