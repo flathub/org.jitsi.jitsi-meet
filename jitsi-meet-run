@@ -4,11 +4,21 @@ set -euo pipefail
 
 EXTRA_ARGS=()
 
-# Additional args for enabling Wayland
-if [[ "${XDG_SESSION_TYPE}" == "wayland" ]]; then
+# Borrowed from: https://github.com/flathub/md.obsidian.Obsidian/blob/5312e50f13f48efccd60a90f282b92b38bcec9a1/obsidian.sh#L20
+# Wayland support can be optionally enabled like so:
+# flatpak override --user --socket=wayland org.jitsi.org.jitsi.jitsi-meet
+if [[ -e "${XDG_RUNTIME_DIR}/${WAYLAND_DISPLAY:-"wayland-0"}" ]]; then
+    echo "Debug: Enabling Wayland backend"
     EXTRA_ARGS+=(
-        "--ozone-platform=wayland"
+        --ozone-platform-hint=auto
+	--enable-features=WaylandWindowDecorations
     )
+    if [[ -c /dev/nvidia0 ]]; then
+        echo "Debug: Detecting Nvidia GPU. disabling GPU sandbox."
+        EXTRA_ARGS+=(
+            --disable-gpu-sandbox
+        )
+    fi
 fi
 
 # Borrowed from: https://github.com/flathub/md.obsidian.Obsidian/blob/5312e50f13f48efccd60a90f282b92b38bcec9a1/obsidian.sh#L36
