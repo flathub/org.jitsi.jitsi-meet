@@ -55,8 +55,8 @@ modules:
       - type: file
         path: org.jitsi.jitsi-meet.jitsi-meet.xml
       - type: file
-        url: https://github.com/jitsi/jitsi-meet-electron/releases/download/v2024.3.0/jitsi-meet-x86_64.AppImage
-        sha256: af245fc5499fcb88fa9268b35c2a4e6e2d64100a2d4d5ef25e3508600c71a89c
+        url: https://github.com/jitsi/jitsi-meet-electron/releases/download/v2024.5.0/jitsi-meet-x86_64.AppImage
+        sha256: 5564be27c44b388e9ed94d4c9b7c1755f1ce1e4f14a0addddaa5b19887249dcd
         only-arches:
           - x86_64
         dest-filename: jitsi-meet.AppImage
@@ -66,8 +66,8 @@ modules:
           version-query: .tag_name | sub("^v"; "")
           url-query: .assets[] | select(.name=="jitsi-meet-x86_64.AppImage") | .browser_download_url
       - type: file
-        url: https://github.com/jitsi/jitsi-meet-electron/releases/download/v2024.3.0/jitsi-meet-arm64.AppImage
-        sha256: 00a1f589f82b643623b0badb2a9d31d3add763e28bf1d6207aec841ec3d175b0
+        url: https://github.com/jitsi/jitsi-meet-electron/releases/download/v2024.5.0/jitsi-meet-arm64.AppImage
+        sha256: 50aaecdc52516a0b9629ec9473377b496005dc72c391c8541f665d661d4d5ebb
         only-arches:
           - aarch64
         dest-filename: jitsi-meet.AppImage
