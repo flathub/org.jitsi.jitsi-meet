@@ -17,9 +17,9 @@
             <li>Lock-protected rooms: Control the access to your conferences with a password.</li>
             <li>Encrypted by default.</li>
             <li>Experimental End-to-End Encryption support for further enhanced security.</li>
-            <li>High quality: Audio and video are delivered with the clarity and richness of Opus and VP8.</li>
+            <li>High quality: Audio and video are delivered with the clarity and richness of Opus, VP8, VP9.</li>
             <li>Web browser ready: No downloads are required of your friends to join the conversation. Jitsi Meet works directly within their browsers as well. Simply share your conference URL with others to get started.</li>
-            <li>100% open source: Powered by awesome communities from all over the world. And your friends at Atlassian.</li>
+            <li>100% open source: Powered by awesome communities from all over the world. And your friends at 8x8.</li>
             <li>Invite by pretty URLs: You can meet at the easy to remember https://MySite.com/OurConf of your choice instead of joining the hard to remember rooms with seemingly random sequences of numbers and letters in their names.</li>
             <li>Support for jitsi-meet:// URLs, for linking directly to conversations.</li>
         </ul>
