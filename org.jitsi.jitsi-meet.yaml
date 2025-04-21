@@ -1,8 +1,8 @@
 app-id: org.jitsi.jitsi-meet
 base: org.electronjs.Electron2.BaseApp
-base-version: '23.08'
+base-version: '24.08'
 runtime: org.freedesktop.Platform
-runtime-version: '23.08'
+runtime-version: '24.08'
 sdk: org.freedesktop.Sdk
 command: jitsi-meet-run
 separate-locales: false
@@ -55,8 +55,8 @@ modules:
       - type: file
         path: org.jitsi.jitsi-meet.jitsi-meet.xml
       - type: file
-        url: https://github.com/jitsi/jitsi-meet-electron/releases/download/v2024.6.0/jitsi-meet-x86_64.AppImage
-        sha256: 9407fb58a0e1e05381bc26439f4b267f8a3cc1d663577412cb908887a1638f5b
+        url: https://github.com/jitsi/jitsi-meet-electron/releases/download/v2025.4.0/jitsi-meet-x86_64.AppImage
+        sha256: f40bb056423151f18b7a17f04a5d64b82e5dbddfa89840b25aba0def6c48f29c
         only-arches:
           - x86_64
         dest-filename: jitsi-meet.AppImage
@@ -66,8 +66,8 @@ modules:
           version-query: .tag_name | sub("^v"; "")
           url-query: .assets[] | select(.name=="jitsi-meet-x86_64.AppImage") | .browser_download_url
       - type: file
-        url: https://github.com/jitsi/jitsi-meet-electron/releases/download/v2024.6.0/jitsi-meet-arm64.AppImage
-        sha256: 3161d13a758ecf191a198d70404e8f87a2231e248dd33e8ee8053c358bde1658
+        url: https://github.com/jitsi/jitsi-meet-electron/releases/download/v2025.4.0/jitsi-meet-arm64.AppImage
+        sha256: c43baae8d5fd9febd01b9f4ec66dac87abe06cbc41b0e12daeb56154d352050c
         only-arches:
           - aarch64
         dest-filename: jitsi-meet.AppImage
