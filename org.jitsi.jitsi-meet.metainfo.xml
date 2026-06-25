@@ -8,6 +8,7 @@
     <project_license>Apache-2.0</project_license>
     <developer_name>Jitsi Team</developer_name>
     <url type="homepage">https://jitsi.org</url>
+    <url type="vcs-browser">https://github.com/jitsi/jitsi-meet-electron</url>
     <description>
         <p>Jitsi Meet lets you stay in touch with all your teams, be they family, friends, or colleagues. Instant video conferences, efficiently adapting to your scale.</p>
         <ul>
@@ -27,6 +28,7 @@
     <screenshots>
         <screenshot type="default">
             <image>https://raw.githubusercontent.com/jitsi/jitsi-meet-electron/d16e6a7b68896c4958ac612918e21963d31f82d3/screenshot.png</image>
+            <caption>Jitsi Meet launch window with input to join a meeting and recent meetings saved locally.</caption>
         </screenshot>
     </screenshots>
     <releases>
